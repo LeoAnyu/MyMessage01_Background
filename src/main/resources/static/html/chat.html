@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室</title>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/chat.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/chat.css">
+
+    <!--引入 element-ui 的样式-->
+    <link rel="stylesheet" type="text/css" href="../css/element.css">
+    <!-- 必须先引入vue  后使用element-ui -->
+    <script src="../js/vue.js"></script>
+    <!-- 引入element 的组件库-->
+    <script src="../js/element.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <el-form class="loginContainer">
+            <h1 align="center">MyMessage</h1>
+            <div id="chatMeu" style="background-color: ghostwhite"></div>
+            <!--聊天界面-->
+            <div id="chatBody">
+                <div id="chatMain" >
+                    <!--聊天展示区域-->
+                    <div id="chatCnt">
+
+                    </div>
+                    <div id="chatArea" >
+                        <textarea id="tex_content" placeholder="请输入文字！"></textarea>
+                        <input id="submit" type="button" value="发送"  >
+                    </div>
+                </div>
+                <!--右侧-->
+                <div id="lists" >
+                    <!--好友列表-->
+                    <div>
+                        <ul style="background-color: lightgrey">好友列表(请点击好友聊天)</ul>
+                        <ul id="friendsList">
+                            <!--<li><a onclick='chatWith("LiLi")'>LiLi</a></li>-->
+                        </ul>
+                    </div>
+                    <hr>
+                    <!--系统消息区-->
+                    <div>
+                        <ul style="background-color: lightgrey">系统通知</ul>
+                        <ul id="systemMsg">
+                            <!--<li>Lili在线</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <el-form-item class="labelDesigner">
+                <label-wrap>设计人：李云熠</label-wrap>
+            </el-form-item>
+        </el-form>
+    </div>
+</body>
+<script>
+    //加载Vue
+    new Vue({
+        el: '#app'
+    })
+</script>
+<style>
+    .loginContainer {
+        border-radius: 15px;
+        background-clip: padding-box;
+        margin: 180px auto;
+        width: 1000px;
+        padding: 15px 35px 15px 35px;
+        background: #fff;
+        border: 1px solid #eaeaea;
+        box-shadow: 0 0 25px #cac6c6;
+    }
+    .labelDesigner {
+        text-align: right;
+    }
+</style>
+</html>
